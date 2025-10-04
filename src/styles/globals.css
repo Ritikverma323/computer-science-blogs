@@ -99,9 +99,39 @@ a:hover {
 }
 
 .nav-links a {
-    color: var(--clr-text);
-    font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  color: var(--clr-text);
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #241f87, #9199b4);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+ 
+
+}
+
+.nav-links a:hover {
+    opacity: 1;
+  transform: scale(1.1);
+  color: #3d3fc8;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
 
 .mode-button {
     background: none;
