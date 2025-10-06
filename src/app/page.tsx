@@ -5,9 +5,11 @@ import PostCard from "../components/PostCard";
 import BlogLayout from "../components/BlogLayout";
 import Head from "next/head";
 import SearchBar from "@/components/SearchBar";
+import Modal from "@/components/Modal";
 
 export default function Home() {
   const [filteredPosts, setFilteredPosts] = useState(posts);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
     <>
@@ -18,6 +20,16 @@ export default function Home() {
           content="Latest tech articles on JavaScript, CSS, React, and more."
         />
       </Head>
+
+      {/* {Reusable Modal} */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>🎉 Hacktoberfest 2025 🎉</h2>
+        <p>Welcome to the official TechBlog repository!</p>
+        <p>
+          Feel free to contribute to our open source projects. Thank you for
+          your work!
+        </p>
+      </Modal>
 
       <BlogLayout title="Latest Posts">
         {/* 🔍 Search bar */}
