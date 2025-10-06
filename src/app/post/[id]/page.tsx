@@ -3,6 +3,7 @@ import Sidebar from "../../../components/Sidebar";
 import Head from "next/head";
 import Image from "next/image";
 import Comments from "../../../components/Comments";
+import ReadingProgressBar from "@/components/ReadingProgressBar";
 type BlogDetailProps = {
   params: {
     id: string;
@@ -26,6 +27,10 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
           content={post.content.replace(/<[^>]+>/g, "").slice(0, 150)}
         />
       </Head>
+
+      {/* Added the progress bar */}
+      <ReadingProgressBar />
+
       <section className="blog-detail">
         <article>
           <span className="category detail-category">#{post.category}</span>

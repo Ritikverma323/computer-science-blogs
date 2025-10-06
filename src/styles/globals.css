@@ -648,3 +648,25 @@ a:hover {
         font-size: 1.8rem;
     }
 }
+
+/* ----------------------------------------------------------------
+   9. Reading Progress Bar Styles (New Section)
+   ---------------------------------------------------------------- */
+
+   .reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050; /* Ensure it's above the header and content */
+    width: 100%;
+    height: 4px; /* Thin bar height */
+    background-color: var(--clr-card-bg); /* Subtle background under the bar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.reading-progress-bar {
+    height: 100%;
+    background-color: var(--clr-primary); /* Use the theme's primary color */
+    transition: width 0.1s ease-out; /* Smooth width transition for scrolling */
+}
+
