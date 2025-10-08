@@ -1,475 +1,61 @@
-/* ----------------------------------------------------------------
-   1. CSS Variables for Dark/Light Mode and Sizing (rem)
-   ---------------------------------------------------------------- */
+@import "tailwindcss";
+
 :root {
-    /* Color Variables - Light Mode Defaults */
-    --clr-primary: #007bff;
-    /* Blue */
-    --clr-text: #333;
-    --clr-background: #fff;
-    --clr-card-bg: #f8f9fa;
-    --clr-border: #ddd;
-    --clr-link-hover: #0056b3;
-
-    /* Spacing and Font Variables */
-    --font-base-size: 16px;
-    /* 1rem = 16px */
-    --space-small: 0.5rem;
-    /* 8px */
-    --space-medium: 1rem;
-    /* 16px */
-    --space-large: 1.5rem;
-    /* 24px */
-    --max-width: 1200px;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-/* Dark Mode Overrides */
-.dark-mode {
-    --clr-primary: #4da6ff;
-    --clr-text: #e9ecef;
-    --clr-background: #121212;
-    --clr-card-bg: #1e1e1e;
-    --clr-border: #333;
-    --clr-link-hover: #7abaff;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-/* ----------------------------------------------------------------
-   2. Global Reset and Base Styles
-   ---------------------------------------------------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: var(--clr-background);
-    color: var(--clr-text);
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 100%;
-    /* Ensures 1rem = 16px */
-}
-
-a {
-    color: var(--clr-primary);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--clr-link-hover);
-}
-
-.container {
-    width: 90%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--space-medium);
-}
-
-/* ----------------------------------------------------------------
-   3. Header and Footer (Same for all pages)
-   ---------------------------------------------------------------- */
-.main-header {
-    background-color: var(--clr-card-bg);
-    border-bottom: 1px solid var(--clr-border);
-    padding: var(--space-small) 0;
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: var(--space-small);
-    padding-bottom: var(--space-small);
-}
-
-.logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--clr-primary);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-links a {
-  display: inline-block;
-  position: relative;
-  color: var(--clr-text);
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #241f87, #9199b4);
-  border-radius: 2px;
-  transition: width 0.3s ease;
- 
-
-}
-
-.nav-links a:hover {
-    opacity: 1;
-  transform: scale(1.1);
-  color: #3d3fc8;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-
-
-.mode-button {
-    background: none;
-    border: 1px solid var(--clr-border);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-    font-size: 1.2rem;
-    transition: background-color 0.3s;
-}
-
-.main-footer {
-    background-color: var(--clr-card-bg);
-    border-top: 1px solid var(--clr-border);
-    padding: var(--space-large) 0;
-    text-align: center;
-    margin-top: var(--space-large);
-}
-
-.main-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-links a {
-    margin-left: var(--space-medium);
-}
-
-
-/* ----------------------------------------------------------------
-   4. Main Content Layout (Responsive)
-   ---------------------------------------------------------------- */
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* Default: Single column */
-    gap: 2rem;
-    padding-top: 2rem;
-}
-
-/* Desktop Layout: Two columns (Blog Posts + Sidebar) */
-@media (min-width: 768px) {
-    .main-content {
-        grid-template-columns: 3fr 1fr;
-        /* 75% for posts, 25% for sidebar */
-    }
-
-    .blog-posts,
-    .blog-detail {
-        grid-column: 1 / 2;
-    }
-
-    .sidebar {
-        grid-column: 2 / 3;
-    }
-}
-
-/* ----------------------------------------------------------------
-   5. Blog List Page Styles (index.html)
-   ---------------------------------------------------------------- */
-.blog-posts h2 {
-    font-size: 2rem;
-    margin-bottom: var(--space-large);
-    color: var(--clr-primary);
-}
-
-.post-card {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: var(--space-medium);
-    border: 1px solid var(--clr-border);
-    border-radius: 0.5rem;
-    background-color: var(--clr-card-bg);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.post-card img {
-    width: 30%;
-    min-width: 150px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.3rem;
-}
-
-.post-info h3 {
-    margin: 0.5rem 0;
-    font-size: 1.5rem;
-}
-
-.post-info time {
-    display: block;
-    font-size: 0.8rem;
-    color: #6c757d;
-    margin-top: var(--space-small);
-}
-
-.category {
-    display: inline-block;
-    background-color: var(--clr-primary);
-    color: white;
-    padding: 0.2rem 0.6rem;
-    border-radius: 0.3rem;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Mobile adjustments for post cards */
-@media (max-width: 600px) {
-    .post-card {
-        flex-direction: column;
-    }
-
-    .post-card img {
-        width: 100%;
-        max-height: 200px;
-    }
-}
-
-/* ----------------------------------------------------------------
-   6. Sidebar Styles (Categories, Trending/Related Posts)
-   ---------------------------------------------------------------- */
-.sidebar-section {
-    padding: var(--space-medium);
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--clr-border);
-    border-radius: 0.5rem;
-    background-color: var(--clr-card-bg);
-}
-
-.sidebar-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-medium);
-    border-bottom: 2px solid var(--clr-primary);
-    padding-bottom: var(--space-small);
-}
-
-.sidebar-section ul {
-    list-style: none;
-}
-
-.sidebar-section li {
-    margin-bottom: var(--space-small);
-}
-
-.sidebar-section a {
-    color: var(--clr-text);
-    display: block;
-    padding: 0.2rem 0;
-}
-
-.sidebar-section a:hover {
-    color: var(--clr-primary);
-}
-
-
-/* ----------------------------------------------------------------
-   7. Blog Detail Page Styles (blog-detail.html)
-   ---------------------------------------------------------------- */
-.blog-detail {
-    padding: var(--space-medium);
-}
-
-.detail-category {
-    font-size: 0.8rem;
-}
-
-.post-title {
-    font-size: 2.5rem;
-    margin: 0.5rem 0 1rem;
-}
-
-.post-meta {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-bottom: var(--space-large);
-}
-
-.detail-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-}
-
-.post-body h3 {
-    font-size: 1.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    border-left: 4px solid var(--clr-primary);
-    padding-left: var(--space-medium);
-}
-
-.post-body p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* 🔎 Search Bar Styles */
 .search-container {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .search-input {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    margin: 2rem 0rem;
-    outline: none;
-    transition: all 0.2s ease;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
 /* Focus effect */
 .search-input:focus {
-    border-color: #0070f3;
-    /* Next.js blue */
-    box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+  border-color: #0070f3; /* Next.js blue */
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
 }
 
-/* Optional: Dark mode support */
+/* Dark mode support */
 .dark .search-input {
-    background-color: #1e1e1e;
-    border-color: #444;
-    color: #fff;
-}
-
-
-/* comment section*/
-.comment-section {
-    margin-top: 3rem;
-}
-.comment-list {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-
-.comment-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding-bottom: 1rem;
-}
-
-.comment-avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.comment-content {
-    flex: 1;
-}
-
-.comment-content strong {
-    display: block;
-    margin-bottom: 0.3rem;
-}
-
-.comment-content p {
-    margin: 0.2rem 0;
-}
-
-.comment-meta {
-    font-size: 0.8rem;
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.3rem;
-}
-
-.comment-replies {
-    margin-left: 2.5rem;
-    margin-top: 0.6rem;
-    padding-left: 1rem;
-}
-
-.no-comments {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-
-
-
-
-/* Visitor Count Styles */
-.visitor-count {
-    background-color: var(--clr-card-bg);
-    border: 1px solid var(--clr-border);
-    border-radius: 0.5rem;
-    padding: var(--space-medium);
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.visitor-count-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-medium);
-    border-bottom: 2px solid var(--clr-primary);
-    padding-bottom: var(--space-small);
-}
-
-.visitor-count-header h3 {
-    font-size: 1.5rem;
-    color: var(--clr-primary);
-    margin: 0;
-}
-
-.track-visit-btn {
-    background-color: var(--clr-primary);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #fff;
 }
 
 .track-visit-btn:hover:not(:disabled) {
