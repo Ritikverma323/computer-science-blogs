@@ -585,6 +585,99 @@ a:hover {
     }
 }
 
+/* ----------------------------------------------------------------
+   8. Modal Component Styles (New Section)
+   ---------------------------------------------------------------- */
+
+   /* Animation Keyframes for smooth transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Overlay - Full screen dark backdrop */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s forwards; /* Apply fade-in animation on mount */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: var(--clr-card-bg);
+    color: var(--clr-text);
+    padding: var(--space-large);
+    border-radius: 0.75rem;
+    position: relative;
+    max-width: 500px;
+    width: 90%; /* Responsive width for mobile */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: scaleUp 0.3s forwards; /* Apply scale-up animation on mount */
+    transform-origin: center;
+    text-align: center;
+}
+
+/* Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--clr-text);
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.modal-close-btn:hover {
+    opacity: 1;
+}
+
+/* Modal Content Styling */
+.modal-content h2 {
+    color: var(--clr-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile adjustments (Modal width is already 90% so minimal CSS is needed here) */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: var(--space-medium);
+    }
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+}
 /* Responsive adjustments for headers and text */
 @media (max-width: 600px) {
     .post-title {
