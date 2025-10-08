@@ -1,8 +1,10 @@
-import { posts } from '../../../data/posts';
-import Sidebar from '../../../components/Sidebar';
-import Image from 'next/image';
+import Head from "next/head";
 import type { Metadata } from 'next';
-import Comments from '@/components/Comments';
+import Image from "next/image";
+import { posts } from "../../../data/posts";
+import Sidebar from "../../../components/Sidebar";
+import Comments from "../../../components/Comments";
+import ReadingProgressBar from "@/components/ReadingProgressBar";
 
 type BlogDetailProps = {
   params: {
@@ -66,7 +68,9 @@ export default function BlogDetail({ params }: BlogDetailProps) {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div><ReadingProgressBar /></div>
       <section className='blog-detail'>
+         
         <article>
           <span className='category detail-category'>#{post.category}</span>
           <h1 className='post-title'>{post.title}</h1>
