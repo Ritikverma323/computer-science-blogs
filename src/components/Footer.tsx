@@ -6,7 +6,10 @@ export default function Footer() {
       <div className="container">
         <p>&copy; 2025 TechBlog. All rights reserved.</p>
         <div className="footer-links">
-          <Link href="/privacy-policy">Privacy Policy</Link> |{" "}
+          
+<Link href="/privacy-policy" className="hover:underline">
+  Privacy Policy
+</Link> |{" "}
           <Link href="/terms-of-service">Terms of Service</Link>
         </div>
       </div>
