@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ChatBot from '../components/ChatBot';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
