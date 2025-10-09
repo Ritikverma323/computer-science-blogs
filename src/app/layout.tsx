@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image', title: siteName, description },
   metadataBase: new URL(siteUrl),
+  // Add this 'icons' property
+  icons: {
+    icon: '/favicon/favicon.ico',
+    apple: '/favicon/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

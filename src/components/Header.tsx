@@ -1,8 +1,6 @@
-
-
+import Image from 'next/image';
 import DarkModeToggle from './DarkModeToggle';
 import Link from 'next/link';
-
 
 export default function Header() {
   return (
@@ -10,7 +8,9 @@ export default function Header() {
       <header className="main-header">
         <div className="container">
           <div className="logo" aria-label="TechBlog Home">
-            <Link href="/">Code Sphere</Link>
+            <Link href="/">
+              <Image src="/images/logo/logo.svg" alt="Code Sphere Logo" width={150} height={40} />
+            </Link>
           </div>
           <ul className="nav-links">
             <li>
