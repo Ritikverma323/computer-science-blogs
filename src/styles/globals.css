@@ -21,6 +21,7 @@
     --space-large: 1.5rem;
     /* 24px */
     --max-width: 1200px;
+    --header-height: 64px;
 }
 
 /* Dark Mode Overrides */
@@ -50,6 +51,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
     font-size: 100%;
     /* Ensures 1rem = 16px */
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -76,6 +81,15 @@ a:hover {
     background-color: var(--clr-card-bg);
     border-bottom: 1px solid var(--clr-border);
     padding: var(--space-small) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-header .container {
@@ -122,7 +136,7 @@ a:hover {
 }
 
 .nav-links a:hover {
-    opacity: 1;
+  opacity: 1;
   transform: scale(1.1);
   color: #3d3fc8;
 }
@@ -171,6 +185,9 @@ a:hover {
     /* Default: Single column */
     gap: 2rem;
     padding-top: 2rem;
+
+    flex: 1;
+    margin-top: var(--header-height);
 }
 
 /* Desktop Layout: Two columns (Blog Posts + Sidebar) */
@@ -261,6 +278,12 @@ a:hover {
 /* ----------------------------------------------------------------
    6. Sidebar Styles (Categories, Trending/Related Posts)
    ---------------------------------------------------------------- */
+.sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+    align-self: flex-start;
+}
+
 .sidebar-section {
     padding: var(--space-medium);
     margin-bottom: 1.5rem;
@@ -1075,3 +1098,7 @@ a:hover {
         height: 50px;
     }
 }
+
+
+
+
