@@ -176,7 +176,7 @@ a:hover {
 /* Desktop Layout: Two columns (Blog Posts + Sidebar) */
 @media (min-width: 768px) {
     .main-content {
-        grid-template-columns: 3fr 1fr;
+        /* grid-template-columns: 3fr 1fr; */
         /* 75% for posts, 25% for sidebar */
     }
 
@@ -737,4 +737,71 @@ a:hover {
 
 .dark-mode .main-header .nav-links li a:hover::after {
     background-color: #4da6ff;   
+}
+
+/* 404 Page Wrapper */
+.not-found-wrapper {
+    min-height: calc(100vh - 200px);
+    /* leave space for header/footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* existing 404 styles */
+.not-found-title {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #4da6ff;
+    margin-bottom: 0.5rem;
+}
+
+.not-found-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.not-found-text {
+    font-size: 1rem;
+    color: #555;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.not-found-button {
+    background-color: #4da6ff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.not-found-button:hover {
+    background-color: #4da6ff;
+    color: #fff;
+    opacity: 90%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .not-found-title {
+        font-size: 4rem;
+    }
+
+    .not-found-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .not-found-text {
+        font-size: 0.95rem;
+    }
 }
