@@ -103,7 +103,7 @@ console.log('End');</code></pre>
     category: "JavaScript",
     author: "Alice Brown",
     date: "2025-10-05",
-    image: "/post3.jpg",
+    image: "/images/post3.jpg",
     excerpt: "",
     content: `
       <p>Async/Await makes asynchronous code readable and manageable.</p>
@@ -140,7 +140,7 @@ console.log('End');</code></pre>
     category: "Web Design",
     author: "David Green",
     date: "2025-09-22",
-    image: "/post4.jpg",
+    image: "/images/post4.jpg",
     excerpt: "",
     content: `
       <p>Responsive design ensures websites look great on all devices.</p>
@@ -171,7 +171,7 @@ console.log('End');</code></pre>
     category: "TypeScript",
     author: "Emma White",
     date: "2025-10-03",
-    image: "/post5.jpg",
+    image: "/images/post5.jpg",
     excerpt: "",
     content: `
       <p>TypeScript adds type safety to JavaScript, helping catch errors early.</p>
@@ -204,7 +204,7 @@ console.log('End');</code></pre>
     category: "React",
     author: "Sophie Black",
     date: "2025-10-07",
-    image: "/post6.jpg",
+    image: "/images/post6.jpg",
     excerpt: "",
     content: `
       <p>React Hooks allow you to use state and other features without writing class components.</p>
@@ -235,7 +235,7 @@ console.log('End');</code></pre>
     category: "Node.js",
     author: "Michael Lee",
     date: "2025-09-30",
-    image: "/post7.jpg",
+    image: "/images/post7.jpg",
     excerpt: "",
     content: `
       <p>Node.js with Express makes building APIs simple and scalable.</p>
@@ -268,7 +268,7 @@ app.use(express.json());</code></pre>
     category: "JavaScript",
     author: "Olivia Martinez",
     date: "2025-10-02",
-    image: "/post8.jpg",
+    image: "/images/post8.jpg",
     excerpt: "",
     content: `
       <p>Closures are functions that retain access to variables from their outer scope.</p>
@@ -307,7 +307,7 @@ console.log(count()); // 1</code></pre>
     category: "CSS",
     author: "Liam Turner",
     date: "2025-09-27",
-    image: "/post9.jpg",
+    image: "/images/post9.jpg",
     excerpt: "",
     content: `
       <p>CSS animations can bring your UI to life.</p>
@@ -341,7 +341,7 @@ console.log(count()); // 1</code></pre>
     category: "React",
     author: "Sophia King",
     date: "2025-10-06",
-    image: "/post10.jpg",
+    image: "/images/post10.jpg",
     excerpt: "",
     content: `
       <p>The Context API allows sharing state across components without prop drilling.</p>
@@ -372,7 +372,7 @@ console.log(count()); // 1</code></pre>
     category: "CSS",
     author: "Noah Wilson",
     date: "2025-09-25",
-    image: "/post11.jpg",
+    image: "/images/post11.jpg",
     excerpt: "",
     content: `
       <p>Flexbox is a one-dimensional layout system in CSS.</p>
@@ -412,7 +412,7 @@ console.log(count()); // 1</code></pre>
     category: "Node.js",
     author: "Ethan Harris",
     date: "2025-10-01",
-    image: "/post12.jpg",
+    image: "/images/post12.jpg",
     excerpt: "",
     content: `
       <p>Streams allow reading/writing data efficiently in Node.js.</p>
@@ -449,7 +449,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "JavaScript",
     author: "Grace Adams",
     date: "2025-09-29",
-    image: "/post13.jpg",
+    image: "/images/post13.jpg",
     excerpt: "",
     content: `
       <p>LocalStorage and SessionStorage allow storing data in the browser.</p>
@@ -483,7 +483,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "React",
     author: "Isabella Scott",
     date: "2025-10-04",
-    image: "/post14.jpg",
+    image: "/images/post14.jpg",
     excerpt: "",
     content: `
       <p>React Router helps manage navigation in single-page applications.</p>
@@ -515,7 +515,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "CSS",
     author: "Mason Cooper",
     date: "2025-09-26",
-    image: "/post15.jpg",
+    image: "/images/post15.jpg",
     excerpt: "",
     content: `
       <p>CSS Variables allow reusable, dynamic styling in CSS.</p>
@@ -551,7 +551,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "React",
     author: "Charlotte Reed",
     date: "2025-10-05",
-    image: "/post16.jpg",
+    image: "/images/post16.jpg",
     excerpt: "",
     content: `
       <p>Forms are central to user interaction in web apps.</p>
@@ -584,7 +584,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "Node.js",
     author: "Daniel Young",
     date: "2025-09-30",
-    image: "/post17.jpg",
+    image: "/images/post17.jpg",
     excerpt: "",
     content: `
       <p>Proper error handling ensures stable and maintainable Node.js apps.</p>
@@ -619,7 +619,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "JavaScript",
     author: "Hannah Baker",
     date: "2025-10-03",
-    image: "/post18.jpg",
+    image: "/images/post18.jpg",
     excerpt: "",
     content: `
       <p>Modules allow splitting code into reusable and maintainable files.</p>
@@ -652,7 +652,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "Web Design",
     author: "Lily Brooks",
     date: "2025-09-24",
-    image: "/post19.jpg",
+    image: "/images/post19.jpg",
     excerpt: "",
     content: `
       <p>PWA allows web apps to behave like native apps with offline capabilities.</p>
@@ -685,7 +685,7 @@ readable.on('data', chunk => console.log(chunk.toString()));</code></pre>
     category: "React",
     author: "Ryan Mitchell",
     date: "2025-10-08",
-    image: "/post20.jpg",
+    image: "/images/post20.jpg",
     excerpt: "",
     content: `
       <p>React performance can be optimized with several techniques.</p>
